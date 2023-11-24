@@ -22,7 +22,7 @@ pipeline {
         stage('Transfer Files to Remote Server') {
             steps {
                 script {
-                    sshPublisher(publishers: [sshPublisherDesc(configName: 'Weblogic-server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'echo "hello"', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/tmp/clover', remoteDirectorySDF: false, removePrefix: '/target', sourceFiles: '**/*.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+                    sshPublisher(publishers: [sshPublisherDesc(configName: 'Weblogic-server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '/home/admin/weblogic12.2.1.4/Oracle/Middleware/Oracle_Home/oracle_common/common/bin/deploy.sh', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/tmp/clover', remoteDirectorySDF: false, removePrefix: '/target', sourceFiles: '**/*.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
                               
          }                   
         }
