@@ -21,13 +21,8 @@ pipeline {
         stage('Build with Maven') {
             steps {
                 script {
-                    // Run Maven build
                     def mavenHome = tool 'maven'
-                    def mavenCMD = "${mavenHome}/bin/mvn"
-
-                    // Use 'withMaven' step to run Maven goals
                     withMaven(
-                        maven: 'maven', // Maven tool name defined in Jenkins
                         goals: 'clean install'
                     )
                 }
