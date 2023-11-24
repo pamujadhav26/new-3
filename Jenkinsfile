@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     // Run Maven build
-                    def mavenHome = tool 'Maven'
+                    def mavenHome = tool 'maven'
                     def mavenCMD = "${mavenHome}/bin/mvn"
 
                     // Use 'withMaven' step to run Maven goals
