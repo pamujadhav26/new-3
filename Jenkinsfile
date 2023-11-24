@@ -25,9 +25,9 @@ pipeline {
                     publishOverSSH(
                         server: Weblogic-server,
                         transfers: [
-                            publishOverSSHTransfer(
-                                sourceFiles: **/*.war,
-                                remoteDirectory: /tmp,
+                            publishOverSSHTransfer (
+                                sourceFiles: '**/*.war',
+                                remoteDirectory: '/tmp',
                                 execCommand: '', // Optional: Command to run on the remote server after file transfer
                               )
                           ]
