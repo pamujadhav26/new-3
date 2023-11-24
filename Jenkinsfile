@@ -1,6 +1,14 @@
 pipeline {
     agent any
 
+    environment {
+        // Define SSH server configuration
+        SSH_SERVER = 'Weblogic-server' // Name of the SSH server configuration in Jenkins
+        SSH_USERNAME = 'admin'
+        SSH_PASSWORD = 'admin'
+        REMOTE_DIRECTORY = '/tmp/clover'
+    }
+
     stages {
         stage('Checkout') {
             steps {
