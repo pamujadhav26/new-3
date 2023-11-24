@@ -21,7 +21,6 @@ pipeline {
         stage('Build with Maven') {
             steps {
                 script {
-                    def mavenHome = tool 'maven'
                     withMaven(
                         goals: 'clean install'
                     )
