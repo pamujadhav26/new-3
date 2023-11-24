@@ -28,7 +28,7 @@ pipeline {
                             publishOverSSHTransfer (
                                 sourceFiles: '**/*.war',
                                 remoteDirectory: '/tmp',
-                                #execCommand: '', // Optional: Command to run on the remote server after file transfer
+                        
                               )
                           ]
                         )
