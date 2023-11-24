@@ -29,7 +29,7 @@ pipeline {
                     withMaven(
                         maven: 'Maven', // Maven tool name defined in Jenkins
                         goals: 'clean install'
-                    }
+                    )
                 }
             }
         }
