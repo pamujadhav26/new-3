@@ -27,7 +27,7 @@ pipeline {
 
                     // Use 'withMaven' step to run Maven goals
                     withMaven(
-                        maven: 'Maven', // Maven tool name defined in Jenkins
+                        maven: 'maven', // Maven tool name defined in Jenkins
                         goals: 'clean install'
                     )
                 }
