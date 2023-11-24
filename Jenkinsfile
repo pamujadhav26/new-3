@@ -22,19 +22,11 @@ pipeline {
         stage('Transfer Files to Remote Server') {
             steps {
                 script {
-                    publishOverSSH(
-                        server: Weblogic-server,
-                        transfers: [
-                            publishOverSSHTransfer (
-                                sourceFiles: '**/*.war',
-                                remoteDirectory: '/tmp',
-                        
-                              )
-                          ]
-                        )
-                  }
+                    sshPublisher(publishers: [sshPublisherDesc(configName: 'Weblogic-server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'echo "hello"', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/tmp/clover', remoteDirectorySDF: false, removePrefix: '/target', sourceFiles: '**/*.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+                              
          }                   
         }
 
     }
+}
 }
