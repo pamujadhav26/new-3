@@ -37,7 +37,7 @@ pipeline {
                               "target": "libs-release-local/{1}",
                               "flat": "false",
                               "props" : "${properties}",
-                              "exclusions": [ "*/","*.original"]
+                              "exclusions": [ "/*","*.original"]
                             }
                          ]
                      }"""
