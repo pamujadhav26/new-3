@@ -33,7 +33,7 @@ pipeline {
                      def uploadSpec = """{
                           "files": [
                             {
-                              "pattern": "target/loan-on-card-service-0.0.1-SNAPSHOT.war",
+                              "pattern": "target/(*)",
                               "target": "libs-release-local/artifact",
                               "flat": "false",
                               "props" : "${properties}",
