@@ -1,3 +1,4 @@
+def registry = 'https://cloverinfo.jfrog.io/'
 pipeline {
     agent any
     tools {
@@ -28,7 +29,7 @@ pipeline {
          }                   
         }
         }
-    def registry = 'https://cloverinfo.jfrog.io/'
+    
          stage("War Publish") {
         steps {
             script {
