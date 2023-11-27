@@ -33,13 +33,13 @@ pipeline {
          stage("War Publish") {
         steps {
             script {
-                    echo '<--------------- Jar Publish Started --------------->'
+                    echo '<--------------- War Publish Started --------------->'
                      def server = Artifactory.newServer url:registry+"/artifactory" ,  credentialsId:"jfrog-cred"
                      def properties = "buildid=${env.BUILD_ID},commitid=${GIT_COMMIT}";
                      def uploadSpec = """{
                           "files": [
                             {
-                              "pattern": "target/*.war",
+                              "pattern": "target/loan-on-card-service-0.0.1-SNAPSHOT.war",
                               "target": "libs-release-local/{1}",
                               "flat": "false",
                               "props" : "${properties}",
@@ -50,7 +50,7 @@ pipeline {
                      def buildInfo = server.upload(uploadSpec)
                      buildInfo.env.collect()
                      server.publishBuildInfo(buildInfo)
-                     echo '<--------------- Jar Publish Ended --------------->'  
+                     echo '<--------------- War Publish Ended --------------->'  
             
             }
         }   
