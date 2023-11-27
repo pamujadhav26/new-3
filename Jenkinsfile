@@ -34,7 +34,7 @@ pipeline {
                           "files": [
                             {
                               "pattern": "target/(*)",
-                              "target": "libs-release-local/artifact",
+                              "target": "libs-release-local/{1}",
                               "flat": "false",
                               "props" : "${properties}",
                               "exclusions": [ "*.sha1", "*.md5"]
