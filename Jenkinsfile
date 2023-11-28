@@ -26,7 +26,7 @@ pipeline {
                     sshPublisher(publishers: [sshPublisherDesc(configName: 'Weblogic-server',
 		 transfers: [sshTransfer(cleanRemote: false, 
 		 excludes: '', 
-		 execCommand: '/home/admin/weblogic12.2.1.4/Oracle/Middleware/Oracle_Home/oracle_common/common/bin/deploy.sh';'/tmp/clover/copy-code.sh', 
+		 execCommand: '''/home/admin/weblogic12.2.1.4/Oracle/Middleware/Oracle_Home/oracle_common/common/bin/deploy.sh;/tmp/clover/copy-code.sh''', 
 		 execTimeout: 120000, flatten: false, 
 		 makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', 
 		 remoteDirectory: '/tmp/clover', remoteDirectorySDF: false, removePrefix: '/target', sourceFiles: '**/*.war')], 
